@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A lightweight prototype gallery for small playable web experiments."
+    />
+    <title>Prototype Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./">Prototype Lab</a>
+      <span>Playable web experiments</span>
+    </header>
+
+    <main>
+      <section class="latest-section" aria-labelledby="latest-title">
+        <div class="section-title">
+          <h1 id="latest-title">Latest Prototype</h1>
+        </div>
+        <div id="latest-prototype"></div>
+      </section>
+
+      <section class="library-section" aria-labelledby="library-title">
+        <div class="section-title">
+          <h2 id="library-title">Past Prototypes</h2>
+        </div>
+        <div class="prototype-grid" id="prototype-grid"></div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

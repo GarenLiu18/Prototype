@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Snake cover</title>
+  <desc id="desc">A pixel-style snake game cover image.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0d140f" />
+      <stop offset="0.58" stop-color="#1f3125" />
+      <stop offset="1" stop-color="#11120f" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.055" stroke-width="2" />
+    </pattern>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <rect width="1280" height="720" fill="url(#grid)" />
+  <rect x="90" y="82" width="1100" height="556" fill="#0a0d09" stroke="#86d46f" stroke-width="8" />
+  <g fill="#82d173">
+    <rect x="330" y="360" width="72" height="72" rx="10" />
+    <rect x="410" y="360" width="72" height="72" rx="10" />
+    <rect x="490" y="360" width="72" height="72" rx="10" />
+    <rect x="570" y="360" width="72" height="72" rx="10" />
+    <rect x="650" y="360" width="72" height="72" rx="10" />
+    <rect x="650" y="280" width="72" height="72" rx="10" />
+    <rect x="730" y="280" width="72" height="72" rx="10" />
+  </g>
+  <rect x="810" y="280" width="72" height="72" rx="10" fill="#c7f970" />
+  <circle cx="858" cy="302" r="8" fill="#0a0d09" />
+  <circle cx="858" cy="330" r="8" fill="#0a0d09" />
+  <circle cx="958" cy="302" r="34" fill="#f25f5c" />
+  <text x="110" y="190" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="900">SNAKE</text>
+  <text x="114" y="246" fill="#aeb7a7" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Prototype 01</text>
+  <text x="110" y="586" fill="#c7f970" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="800">CLICK TO PLAY</text>
+</svg>

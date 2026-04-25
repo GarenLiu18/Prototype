@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A standard Snake prototype built with canvas." />
+    <title>Snake | Prototype Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <a class="back-link" href="../../">Back to Prototype Lab</a>
+        <div>
+          <p class="eyebrow">Prototype 01</p>
+          <h1>Snake</h1>
+        </div>
+      </header>
+
+      <section class="scorebar" aria-label="Game stats">
+        <div>
+          <span>Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span>Best</span>
+          <strong id="best-score">0</strong>
+        </div>
+        <div>
+          <span>Status</span>
+          <strong id="game-status">Ready</strong>
+        </div>
+      </section>
+
+      <section class="board-wrap" aria-label="Snake game board">
+        <canvas id="game-board" width="480" height="480"></canvas>
+        <div class="overlay" id="overlay">
+          <strong id="overlay-title">Snake</strong>
+          <span id="overlay-text">Press Start or Space to play.</span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Game controls">
+        <button id="start-button" type="button">Start</button>
+        <button id="pause-button" type="button">Pause</button>
+        <button id="restart-button" type="button">Restart</button>
+      </section>
+
+      <section class="touch-controls" aria-label="Direction controls">
+        <button type="button" data-direction="up" aria-label="Move up">Up</button>
+        <button type="button" data-direction="left" aria-label="Move left">Left</button>
+        <button type="button" data-direction="down" aria-label="Move down">Down</button>
+        <button type="button" data-direction="right" aria-label="Move right">Right</button>
+      </section>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
