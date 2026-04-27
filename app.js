@@ -1,5 +1,13 @@
 const prototypes = [
   {
+    title: "錯過",
+    description: "A Reigns-like narrative prototype about choices, silence, and the paths that remain.",
+    href: "./prototypes/missed/index.html",
+    cover: "./prototypes/missed/cover.svg",
+    tags: ["Game", "Narrative", "Cards"],
+    addedAt: "2026-04-27",
+  },
+  {
     title: "Dependency",
     description:
       "A Vampire Survivors-like arena prototype with automatic shooting, simple shapes, and endless pressure.",

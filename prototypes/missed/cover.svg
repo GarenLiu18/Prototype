@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Missed cover</title>
+  <desc id="desc">A quiet country road through rice fields with two diverging card choices.</desc>
+  <rect width="960" height="600" fill="#f8f3ea"/>
+  <rect y="0" width="960" height="220" fill="#8db6be" opacity="0.58"/>
+  <path d="M0 330c145-44 249-58 383-21 160 44 285 16 577-42v333H0z" fill="#dfe8d3"/>
+  <path d="M0 432c142-28 287-25 435 9 161 36 321 34 525-24v183H0z" fill="#b9d192"/>
+  <path d="M430 600c4-110 14-202 32-275 14-56 29-92 45-118" fill="none" stroke="#7b6b53" stroke-width="36" stroke-linecap="round"/>
+  <path d="M451 600c18-113 45-214 81-303 24-58 50-101 79-128" fill="none" stroke="#fffaf1" stroke-width="8" stroke-linecap="round" opacity="0.82"/>
+  <circle cx="770" cy="116" r="50" fill="#efb45b"/>
+  <g transform="translate(118 140)">
+    <rect width="250" height="330" rx="8" fill="#fffaf1" stroke="#d8c9b5" stroke-width="5"/>
+    <text x="34" y="86" fill="#22252a" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="900">&#x932F;&#x904E;</text>
+    <path d="M48 156h154M48 204h118M48 252h166" stroke="#6f706d" stroke-width="16" stroke-linecap="round" opacity="0.55"/>
+  </g>
+  <g transform="translate(608 166) rotate(8)">
+    <rect width="210" height="276" rx="8" fill="#fffaf1" stroke="#d8c9b5" stroke-width="5"/>
+    <path d="M65 142l-34-34m34 34l-34 34M145 142l34-34m-34 34l34 34" stroke="#b85b4d" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <text x="64" y="540" fill="#3d7c68" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">Choose left or right, then remember the day</text>
+</svg>

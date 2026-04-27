@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="錯過是一個關於左右選擇與人生分岔的卡牌敘事 Prototype。" />
+    <title>錯過 | Prototype Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="story-shell">
+      <header class="story-header">
+        <a class="back-link" href="../../">Back to Prototype Lab</a>
+        <div>
+          <p class="eyebrow">Prototype 03</p>
+          <h1>錯過</h1>
+        </div>
+      </header>
+
+      <section class="intro" aria-label="Opening narration">
+        <p>我從小在鄉下長大，每天都要騎腳踏車穿過稻田上的小路，某天...</p>
+      </section>
+
+      <section class="choice-stage" aria-live="polite">
+        <div class="choice-hint left-hint" id="left-hint">左</div>
+        <article class="previous-card" id="previous-card" hidden>
+          <p class="card-index" id="previous-card-index">Previous</p>
+          <h2 id="previous-card-title">上一張卡片</h2>
+          <p id="previous-card-body"></p>
+        </article>
+        <article class="story-card" id="story-card">
+          <p class="card-index" id="card-index">Card 1</p>
+          <h2 id="card-title">上學路上與他/她相遇</h2>
+          <p id="card-body">左右選擇，讓人生往不同方向走。</p>
+          <p class="mechanic-status" id="mechanic-status"></p>
+        </article>
+        <div class="choice-hint right-hint" id="right-hint">右</div>
+      </section>
+
+      <section class="choice-controls" aria-label="Choices">
+        <button id="left-button" type="button">
+          <span>Left</span>
+          <strong id="left-choice">搭訕</strong>
+        </button>
+        <button id="right-button" type="button">
+          <span>Right</span>
+          <strong id="right-choice">沉默</strong>
+        </button>
+      </section>
+
+      <section class="ending-panel" id="ending-panel" hidden>
+        <p class="ending-label" id="ending-label">Ending</p>
+        <h2 id="ending-title">結局</h2>
+        <p id="ending-text"></p>
+        <button id="restart-button" type="button">Restart</button>
+      </section>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
