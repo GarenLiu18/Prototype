@@ -1,5 +1,14 @@
 const prototypes = [
   {
+    title: "貪心",
+    description:
+      "An isometric four-tile prototype about wanting more, with the player starting on the lower-left tile at screen center.",
+    href: "./prototypes/greed/index.html?play=1",
+    cover: "./prototypes/greed/cover.svg",
+    tags: ["Game", "Canvas", "Isometric"],
+    addedAt: "2026-04-28",
+  },
+  {
     title: "錯過",
     description: "A Reigns-like narrative prototype about choices, silence, and the paths that remain.",
     href: "./prototypes/missed/index.html",

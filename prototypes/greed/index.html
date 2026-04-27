@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="貪心是一個等角視角四宮格 prototype，玩家從中心格出發，不斷在左上與右上之間選擇前進。"
+    />
+    <title>貪心 | Prototype Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <a class="back-link" href="../../index.html">Back to Prototype Lab</a>
+        <div>
+          <p class="eyebrow">Prototype 04</p>
+          <h1>貪心</h1>
+        </div>
+      </header>
+
+      <section class="scorebar" aria-label="Game stats">
+        <div>
+          <span>Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span>Time</span>
+          <strong id="time-left">30.0</strong>
+        </div>
+        <div>
+          <span>Next Star</span>
+          <strong id="star-value">1</strong>
+        </div>
+        <div>
+          <span>Risk Chain</span>
+          <strong id="risk-chain">0</strong>
+        </div>
+      </section>
+
+      <section class="arena-wrap" aria-label="Greed game arena">
+        <div class="timer-bar" aria-hidden="true">
+          <span id="time-bar"></span>
+        </div>
+        <canvas id="game-board" width="960" height="540"></canvas>
+        <div class="overlay" id="overlay" hidden>
+          <strong id="overlay-title">Game Over</strong>
+          <span id="overlay-text"></span>
+          <button id="restart-button" type="button">Restart</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
