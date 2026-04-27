@@ -53,6 +53,7 @@ let killsSinceLastStar;
 let elapsedSeconds;
 let buffTimer;
 let withdrawalSeconds;
+let windowShrinkSeconds;
 let hasConsumedStar;
 let spawnTimer;
 let shotTimer;
@@ -73,6 +74,7 @@ function resetGame() {
   elapsedSeconds = 0;
   buffTimer = 0;
   withdrawalSeconds = 0;
+  windowShrinkSeconds = 0;
   hasConsumedStar = false;
   spawnTimer = 0;
   shotTimer = 0;
@@ -152,6 +154,7 @@ function updateDependency(deltaTime) {
 
   if (hasConsumedStar) {
     withdrawalSeconds += deltaTime;
+    windowShrinkSeconds += deltaTime;
   }
 }
 
@@ -479,11 +482,11 @@ function getCurrentPlayWindow() {
 }
 
 function getCurrentWindowScale() {
-  if (!hasConsumedStar || isEmpowered()) {
+  if (!hasConsumedStar) {
     return 1;
   }
 
-  return Math.max(minWindowScale, 1 - withdrawalSeconds * 0.018);
+  return Math.max(minWindowScale, 1 - windowShrinkSeconds * 0.009);
 }
 
 function draw() {
