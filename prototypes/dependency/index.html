@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Dependency is a survival prototype about motion, pressure, and automatic fire."
+    />
+    <title>Dependency | Prototype Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <a class="back-link" href="../../">Back to Prototype Lab</a>
+        <div>
+          <p class="eyebrow">Prototype 02</p>
+          <h1>Dependency</h1>
+        </div>
+      </header>
+
+      <section class="scorebar" aria-label="Game stats">
+        <div>
+          <span>Time</span>
+          <strong id="survival-time">0:00</strong>
+        </div>
+        <div>
+          <span>Kills</span>
+          <strong id="kills">0</strong>
+        </div>
+        <div>
+          <span>State</span>
+          <strong id="dependency-state">Stable</strong>
+        </div>
+        <div>
+          <span>Star Drop</span>
+          <strong id="drop-rate">0%</strong>
+        </div>
+      </section>
+
+      <section class="arena-wrap" aria-label="Dependency game arena">
+        <canvas id="game-board" width="960" height="540"></canvas>
+        <div class="overlay" id="overlay">
+          <strong id="overlay-title">Dependency</strong>
+          <span id="overlay-text">Stars make you powerful. The absence after them makes you weaker.</span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Game controls">
+        <button id="start-button" type="button">Start</button>
+        <button id="pause-button" type="button">Pause</button>
+        <button id="restart-button" type="button">Restart</button>
+      </section>
+
+      <section class="touch-controls" aria-label="Movement controls">
+        <button type="button" data-direction="up" aria-label="Move up">Up</button>
+        <button type="button" data-direction="left" aria-label="Move left">Left</button>
+        <button type="button" data-direction="down" aria-label="Move down">Down</button>
+        <button type="button" data-direction="right" aria-label="Move right">Right</button>
+      </section>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>

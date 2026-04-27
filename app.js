@@ -1,5 +1,14 @@
 const prototypes = [
   {
+    title: "Dependency",
+    description:
+      "A Vampire Survivors-like arena prototype with automatic shooting, simple shapes, and endless pressure.",
+    href: "./prototypes/dependency/index.html?play=1",
+    cover: "./prototypes/dependency/cover.svg",
+    tags: ["Game", "Canvas", "Survival"],
+    addedAt: "2026-04-27",
+  },
+  {
     title: "Snake",
     description: "A standard Snake game with keyboard controls, scoring, pause, and restart.",
     href: "./prototypes/snake/index.html?play=1",

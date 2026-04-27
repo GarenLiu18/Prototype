@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Dependency cover</title>
+  <desc id="desc">A circle survivor fires at incoming diamond enemies.</desc>
+  <rect width="960" height="600" fill="#090b10"/>
+  <g stroke="#ffffff" stroke-opacity="0.07" stroke-width="1">
+    <path d="M0 60h960M0 120h960M0 180h960M0 240h960M0 300h960M0 360h960M0 420h960M0 480h960M0 540h960"/>
+    <path d="M60 0v600M120 0v600M180 0v600M240 0v600M300 0v600M360 0v600M420 0v600M480 0v600M540 0v600M600 0v600M660 0v600M720 0v600M780 0v600M840 0v600M900 0v600"/>
+  </g>
+  <g fill="#fb7185" stroke="#ffffff" stroke-opacity="0.78" stroke-width="5">
+    <path d="M168 152l32 32-32 32-32-32z"/>
+    <path d="M785 121l28 28-28 28-28-28z"/>
+    <path d="M802 415l38 38-38 38-38-38z"/>
+    <path d="M202 450l34 34-34 34-34-34z"/>
+    <path d="M608 82l24 24-24 24-24-24z"/>
+    <path d="M407 506l26 26-26 26-26-26z"/>
+  </g>
+  <g stroke="#f8d66d" stroke-linecap="round" stroke-width="10">
+    <path d="M489 302l105-82"/>
+    <path d="M469 318l-120 100"/>
+    <path d="M512 324l178 90"/>
+  </g>
+  <path d="M654 260l12 25 28 4-20 19 5 27-25-13-25 13 5-27-20-19 28-4z" fill="#f8d66d" stroke="#ffffff" stroke-opacity="0.86" stroke-width="5"/>
+  <circle cx="480" cy="300" r="48" fill="#6ee7b7" stroke="#f2f5f8" stroke-width="8"/>
+  <text x="56" y="91" fill="#f2f5f8" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900">Dependency</text>
+  <text x="58" y="137" fill="#a9b3bf" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Survive without scaling</text>
+</svg>
