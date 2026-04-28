@@ -26,13 +26,15 @@ const player = {
 };
 
 const relativeCells = [
-  { key: "left", gridX: 0, gridY: -1, label: "Left" },
-  { key: "right", gridX: 1, gridY: -1, label: "Right" },
+  { key: "left", gridX: -1, gridY: -1, label: "Left" },
+  { key: "right", gridX: 0, gridY: -1, label: "Right" },
+  { key: "super", gridX: 1, gridY: -1, label: "Super" },
   { key: "current", gridX: 0, gridY: 0, label: "You" },
 ];
 
 const optionSides = ["left", "right"];
 const gameDuration = 30;
+const superStarChance = 0.28;
 
 let score = 0;
 let starRiskChain = 0;
@@ -40,6 +42,7 @@ let starCount = 0;
 let step = 0;
 let timeLeft = gameDuration;
 let mustOfferStar = false;
+let mustOfferSuperStar = false;
 let gameState = "playing";
 let options = [];
 let pointer = { x: 0, y: 0, active: false };
@@ -57,6 +60,7 @@ function resetGame() {
   step = 0;
   timeLeft = gameDuration;
   mustOfferStar = false;
+  mustOfferSuperStar = false;
   gameState = "playing";
   transition = null;
   cameraReturn = null;
@@ -94,6 +98,33 @@ function generateOptions() {
   const starSide = optionSides[Math.floor(Math.random() * optionSides.length)];
   const shouldOfferRandomStar = Math.random() < 0.34;
   const shouldOfferStar = mustOfferStar || shouldOfferRandomStar;
+  const forceSuperStar = mustOfferSuperStar;
+  const shouldOfferSuperStar =
+    shouldOfferStar && (forceSuperStar || (getNextStarGameOverChance() >= 64 && Math.random() < superStarChance));
+
+  if (shouldOfferSuperStar) {
+    const normalStarSide = "right";
+    options = [
+      {
+        side: "left",
+        kind: "diamond",
+      },
+      {
+        side: normalStarSide,
+        kind: "star",
+      },
+      {
+        side: "super",
+        kind: "superstar",
+      },
+    ];
+
+    if (forceSuperStar) {
+      mustOfferSuperStar = false;
+    }
+
+    return;
+  }
 
   options = optionSides.map((side) => ({
     side,
@@ -128,18 +159,33 @@ function resolveChoice(option) {
     score += 1;
     starRiskChain = 0;
     mustOfferStar = starCount > 0;
-  } else {
+  } else if (option.kind === "star") {
     const chance = getNextStarGameOverChance();
-    starRiskChain += 1;
-    starCount += 1;
-    score += getStarValue(starRiskChain);
-    mustOfferStar = true;
 
     if (starRiskChain >= 2 && Math.random() < chance / 100) {
       endGame(chance);
       updateStats();
       return;
     }
+
+    starRiskChain += 1;
+    starCount += 1;
+    score += getStarValue(starRiskChain);
+    mustOfferStar = true;
+
+    if (getNextStarGameOverChance() >= 64) {
+      mustOfferSuperStar = true;
+    }
+  } else if (option.kind === "superstar") {
+    if (Math.random() < 0.9) {
+      endGame(90);
+      updateStats();
+      return;
+    }
+
+    score *= 10;
+    mustOfferStar = true;
+    mustOfferSuperStar = false;
   }
 
   generateOptions();
@@ -282,7 +328,9 @@ function drawBackground() {
 }
 
 function drawBoard(camera, boardOffset) {
+  const visibleKeys = new Set(["current", ...options.map((option) => option.side)]);
   const cells = relativeCells
+    .filter((cell) => visibleKeys.has(cell.key))
     .map((cell) => ({ ...cell, world: gridToWorld(cell.gridX, cell.gridY) }))
     .sort((a, b) => a.world.y - b.world.y);
 
@@ -353,6 +401,13 @@ function drawItems(camera, boardOffset) {
     const x = world.x + camera.x + boardOffset.x;
     const y =
       world.y + camera.y + boardOffset.y - 48 + Math.sin(player.bob + (option.side === "left" ? 0 : 1)) * 5;
+    drawKeyHint(x, world.y + camera.y + boardOffset.y + 19, option.side);
+
+    if (option.kind === "superstar") {
+      drawSuperStarItem(x, y, getStarScale() * 1.08);
+      drawRiskLabel(x, y - 48, 90);
+      return;
+    }
 
     if (option.kind === "star") {
       drawStarItem(x, y, getStarScale());
@@ -379,6 +434,30 @@ function drawDiamondItem(x, y) {
   context.fill();
   context.stroke();
   drawItemText("+1", 0, 46, "#fff7e8");
+  context.restore();
+}
+
+function drawKeyHint(x, y, side) {
+  const labels = {
+    left: "←",
+    right: "→",
+    super: "↑",
+  };
+  const label = labels[side];
+
+  if (!label) {
+    return;
+  }
+
+  context.save();
+  context.fillStyle = "rgba(255, 247, 232, 0.22)";
+  context.strokeStyle = "rgba(16, 14, 11, 0.28)";
+  context.lineWidth = 4;
+  context.font = "900 46px Inter, sans-serif";
+  context.textAlign = "center";
+  context.textBaseline = "middle";
+  context.strokeText(label, x, y);
+  context.fillText(label, x, y);
   context.restore();
 }
 
@@ -412,6 +491,50 @@ function drawStarItem(x, y, scale) {
   context.stroke();
   context.rotate(-Math.sin(player.bob) * 0.12);
   drawItemText(`+${getStarValue(starRiskChain + 1)}`, 0, 34 + outerRadius, "#fff7e8");
+  context.restore();
+}
+
+function drawSuperStarItem(x, y, scale) {
+  const outerRadius = 28 * scale;
+  const innerRadius = 12 * scale;
+  const glowRadius = 52 * scale;
+
+  context.save();
+  context.translate(x, y);
+
+  const glow = context.createRadialGradient(0, 0, outerRadius * 0.4, 0, 0, glowRadius);
+  glow.addColorStop(0, "rgba(255, 246, 176, 0.92)");
+  glow.addColorStop(0.42, "rgba(242, 184, 75, 0.34)");
+  glow.addColorStop(1, "rgba(242, 184, 75, 0)");
+  context.fillStyle = glow;
+  context.beginPath();
+  context.arc(0, 0, glowRadius, 0, Math.PI * 2);
+  context.fill();
+
+  context.rotate(player.bob * 0.55);
+  context.fillStyle = "#fff176";
+  context.strokeStyle = "#ffffff";
+  context.lineWidth = 4;
+  context.beginPath();
+
+  for (let index = 0; index < 10; index += 1) {
+    const radius = index % 2 === 0 ? outerRadius : innerRadius;
+    const angle = (Math.PI * 2 * index) / 10 - Math.PI / 2;
+    const pointX = Math.cos(angle) * radius;
+    const pointY = Math.sin(angle) * radius;
+
+    if (index === 0) {
+      context.moveTo(pointX, pointY);
+    } else {
+      context.lineTo(pointX, pointY);
+    }
+  }
+
+  context.closePath();
+  context.fill();
+  context.stroke();
+  context.rotate(-player.bob * 0.55);
+  drawItemText("x10", 0, 40 + outerRadius, "#fff7e8");
   context.restore();
 }
 
@@ -565,7 +688,11 @@ function getNextStarGameOverChance() {
     return 0;
   }
 
-  return Math.min(100, 2 ** starRiskChain);
+  if (starRiskChain <= 6) {
+    return 2 ** starRiskChain;
+  }
+
+  return Math.min(100, 64 + (starRiskChain - 6) * 5);
 }
 
 function getStarScale() {
@@ -607,6 +734,12 @@ canvas.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
+  if (event.code === "Enter" && gameState !== "playing" && gameState !== "moving") {
+    event.preventDefault();
+    resetGame();
+    return;
+  }
+
   if (event.code === "ArrowLeft" || event.code === "KeyA") {
     event.preventDefault();
     chooseOption("left");
@@ -615,6 +748,11 @@ document.addEventListener("keydown", (event) => {
   if (event.code === "ArrowRight" || event.code === "KeyD") {
     event.preventDefault();
     chooseOption("right");
+  }
+
+  if (event.code === "ArrowUp" || event.code === "KeyW") {
+    event.preventDefault();
+    chooseOption("super");
   }
 });
 
