@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A pixel road prototype with a cargo truck driving forward."
+    />
+    <title>Trade-off | Prototype Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <a class="back-link" href="../../index.html">Back to Prototype Lab</a>
+
+      <section class="runner-frame" aria-label="Trade-off prototype">
+        <canvas id="game-board" width="960" height="300"></canvas>
+      </section>
+
+      <section class="controls" aria-label="Truck controls">
+        <button id="discard-button" type="button">Drop Cargo</button>
+        <div class="stat">
+          <span>Cargo</span>
+          <strong id="cargo-count">50</strong>
+        </div>
+        <div class="stat speed-stat">
+          <span>Speed</span>
+          <strong id="speed-value">210</strong>
+          <small id="boost-value">+0 boost</small>
+        </div>
+      </section>
+
+      <p class="control-hint">Press D or Space to drop cargo.</p>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>

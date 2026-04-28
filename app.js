@@ -1,5 +1,14 @@
 const prototypes = [
   {
+    title: "Trade-off",
+    description:
+      "A T-Rex-inspired pixel road prototype with a cargo truck driving forward.",
+    href: "./prototypes/trade-off/index.html",
+    cover: "./prototypes/trade-off/cover.svg",
+    tags: ["Game", "Canvas", "Runner"],
+    addedAt: "2026-04-28",
+  },
+  {
     title: "貪心",
     description:
       "An isometric four-tile prototype about wanting more, with the player starting on the lower-left tile at screen center.",

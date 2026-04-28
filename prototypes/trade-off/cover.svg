@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Trade-off cover</title>
+  <desc id="desc">A pixel cargo truck driving on a plain white road.</desc>
+  <rect width="960" height="540" fill="#fff"/>
+  <path d="M116 176h24v-12h54v12h30v12h28v12h48v14H112v-14h4zM548 200h26v-12h36v-18h52v12h44v12h38v18h70v14H548z" fill="none" stroke="#d6d6d6" stroke-width="6"/>
+  <rect x="0" y="392" width="960" height="4" fill="#575757"/>
+  <g fill="#575757">
+    <rect x="132" y="348" width="256" height="14"/>
+    <rect x="132" y="308" width="12" height="54"/>
+    <rect x="372" y="320" width="12" height="42"/>
+    <rect x="372" y="292" width="78" height="70"/>
+    <rect x="394" y="266" width="44" height="28"/>
+    <rect x="450" y="324" width="28" height="24"/>
+    <rect x="156" y="363" width="68" height="10"/>
+    <rect x="358" y="363" width="70" height="10"/>
+    <rect x="474" y="346" width="14" height="16"/>
+    <rect x="96" y="356" width="30" height="30"/>
+    <rect x="420" y="410" width="8" height="4"/>
+    <rect x="460" y="412" width="12" height="4"/>
+    <rect x="502" y="408" width="15" height="4"/>
+    <rect x="548" y="414" width="9" height="4"/>
+    <rect x="612" y="413" width="6" height="4"/>
+    <rect x="674" y="407" width="12" height="4"/>
+    <rect x="728" y="406" width="20" height="4"/>
+    <rect x="792" y="412" width="8" height="4"/>
+    <rect x="860" y="413" width="10" height="4"/>
+    <rect x="912" y="407" width="18" height="4"/>
+  </g>
+  <g fill="#fff">
+    <rect x="400" y="276" width="24" height="16"/>
+    <rect x="408" y="308" width="28" height="14"/>
+  </g>
+  <g fill="#fff" stroke="#575757" stroke-width="4">
+    <rect x="148" y="318" width="26" height="26"/>
+    <rect x="178" y="318" width="26" height="26"/>
+    <rect x="208" y="318" width="26" height="26"/>
+    <rect x="238" y="318" width="26" height="26"/>
+    <rect x="268" y="318" width="26" height="26"/>
+    <rect x="298" y="318" width="26" height="26"/>
+    <rect x="328" y="318" width="26" height="26"/>
+    <rect x="358" y="318" width="26" height="26"/>
+    <rect x="388" y="318" width="26" height="26"/>
+    <rect x="162" y="288" width="26" height="26"/>
+    <rect x="192" y="288" width="26" height="26"/>
+    <rect x="222" y="288" width="26" height="26"/>
+    <rect x="252" y="288" width="26" height="26"/>
+    <rect x="282" y="288" width="26" height="26"/>
+    <rect x="312" y="288" width="26" height="26"/>
+    <rect x="342" y="288" width="26" height="26"/>
+    <rect x="372" y="288" width="26" height="26"/>
+    <rect x="176" y="258" width="26" height="26"/>
+    <rect x="206" y="258" width="26" height="26"/>
+    <rect x="236" y="258" width="26" height="26"/>
+    <rect x="266" y="258" width="26" height="26"/>
+    <rect x="296" y="258" width="26" height="26"/>
+    <rect x="326" y="258" width="26" height="26"/>
+    <rect x="356" y="258" width="26" height="26"/>
+    <rect x="220" y="228" width="26" height="26"/>
+    <rect x="250" y="228" width="26" height="26"/>
+    <rect x="280" y="228" width="26" height="26"/>
+    <rect x="310" y="228" width="26" height="26"/>
+    <rect x="250" y="198" width="26" height="26"/>
+    <rect x="280" y="198" width="26" height="26"/>
+  </g>
+  <g stroke="#575757" stroke-width="3">
+    <path d="M161 318v26M148 331h26M191 318v26M178 331h26M221 318v26M208 331h26M251 318v26M238 331h26M281 318v26M268 331h26M311 318v26M298 331h26M341 318v26M328 331h26M371 318v26M358 331h26M401 318v26M388 331h26M175 288v26M162 301h26M205 288v26M192 301h26M235 288v26M222 301h26M265 288v26M252 301h26M295 288v26M282 301h26M325 288v26M312 301h26M355 288v26M342 301h26M385 288v26M372 301h26M189 258v26M176 271h26M219 258v26M206 271h26M249 258v26M236 271h26M279 258v26M266 271h26M309 258v26M296 271h26M339 258v26M326 271h26M369 258v26M356 271h26M233 228v26M220 241h26M263 228v26M250 241h26M293 228v26M280 241h26M323 228v26M310 241h26M263 198v26M250 211h26M293 198v26M280 211h26"/>
+  </g>
+  <g fill="#575757">
+    <rect x="168" y="374" width="36" height="36"/>
+    <rect x="382" y="374" width="36" height="36"/>
+  </g>
+  <g fill="#fff">
+    <rect x="178" y="384" width="16" height="16"/>
+    <rect x="392" y="384" width="16" height="16"/>
+  </g>
+  <text x="920" y="70" text-anchor="end" fill="#575757" font-family="'Courier New', monospace" font-weight="700" font-size="40">00040</text>
+</svg>
