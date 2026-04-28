@@ -395,12 +395,26 @@ function drawDeliveryStop(stop, isActive) {
   context.textBaseline = "bottom";
 
   if (isActive) {
-    context.fillText(`x${stop.requiredCargo}`, locationX, baseY - 52);
+    drawActiveStopLabels(stop, locationX, baseY);
     return;
   }
 
   drawDeliveredCargo(stop, locationX, baseY);
   drawDeliveryPopup(stop, locationX, baseY);
+}
+
+function drawActiveStopLabels(stop, x, baseY) {
+  const remainingSeconds = Math.max(0, stop.timeLimit - (world.elapsed - stop.startTime));
+
+  context.font = "bold 18px 'Courier New', monospace";
+  context.textAlign = "center";
+  context.textBaseline = "bottom";
+  context.fillStyle = remainingSeconds <= 3 ? "#c74444" : "#575757";
+  context.fillText(`${Math.ceil(remainingSeconds)}s`, x, baseY - 70);
+
+  context.font = "bold 13px 'Courier New', monospace";
+  context.fillStyle = "#575757";
+  context.fillText(`x${stop.requiredCargo}`, x, baseY - 52);
 }
 
 function drawDeliveryTriggerLine(x, baseY) {
